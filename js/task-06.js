@@ -30,17 +30,11 @@ const inputValidLenght = inputValid.dataset.length
 inputValid.addEventListener('blur', onInputBlur)
 
 function onInputBlur() {
-    const value = inputValid.value
+inputValid.classList.add('valid', 'invalid')
 
-    if (value.length !== Number(inputValidLenght)) {
-        inputValid.classList.remove('valid')
-        inputValid.classList.add('invalid')
-    } else {
-        inputValid.classList.add('valid')
-        inputValid.classList.remove('invalid')
-    }
-    
+ inputValid.value.length === Number(inputValidLenght) ? inputValid.classList.remove('invalid') : inputValid.classList.remove('valid');
+
 console.log(inputValidLenght);
-console.log(value.length);
+console.log(inputValid.value.length);
 }
 
